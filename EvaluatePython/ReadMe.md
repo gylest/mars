@@ -39,7 +39,7 @@ List all installed packages in current Python enivironment:-
 
 ```py -m pip list```
 
-Update outdated packages:-
+List outdated packages:-
 
 `py -m pip list --outdated`
 
