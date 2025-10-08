@@ -16,7 +16,7 @@ The Python Package Index (PyPI) is a repository of software for the Python progr
 The online library can be found here <https://pypi.org/>.
 Use Package Installer for Python (pip) tool to install packages from this repository.  
 
-Major packages used on this project:-
+### Major Packages in Project
 
 | Package    | Description |
 |------------|-------------|
@@ -31,25 +31,25 @@ Major packages used on this project:-
 | requests | Simplified HTTP library |
 | selenium | Automate web browser interaction from Python |
 
-Upgrade pip:-
+### pip Commands
 
-`py -m pip install --upgrade pip`
+Note: Prefix each pip command with "py -m" to ensure the current python environment.
 
-List all installed packages in current Python enivironment:-
-
-```py -m pip list```
-
-List outdated packages:-
-
-`py -m pip list --outdated`
-
-Update requirements.txt:-
-
-`py -m pip freeze > requirements.txt`
-
-Install project dependencies on a new machine:-
-
-`py -m pip install -r requirements.txt`
+|Description|Command|
+|--|--|
+|pip version|`py -m pip --version`|
+|Upgrade pip|`py -m pip install --upgrade pip`|
+|List packages in python environment|`py -m pip list`|
+|List outdated packages|`py -m pip list --outdated`|
+|Update requirements.txt|`py -m pip freeze > requirements.txt`|
+|Install packages on new PC|`py -m pip install -r requirements.txt`|
+|Install a package|`py -m pip install Flask`|
+|Install specific version a package|`py -m pip install astroid==2.4.0`|
+|Update package to latest version|`py -m pip install --upgrade pylint`|
+|Uninstall a package|`py -m pip uninstall astroid`|
+|Show information on a package|`py -m pip show Flask`|
+|Verify packages|`py -m pip check`|
+|Show package dependencies|`py -m pipdeptree`|
 
 ## Linting using PyLint
 
