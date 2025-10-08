@@ -39,7 +39,7 @@ Note: Prefix each pip command with "py -m" to ensure the current python environm
 |--|--|
 |pip version|`py -m pip --version`|
 |Upgrade pip|`py -m pip install --upgrade pip`|
-|List  packages in python environment|`py -m pip list`|
+|List packages in python environment|`py -m pip list`|
 |List outdated packages|`py -m pip list --outdated`|
 |Update requirements.txt|`py -m pip freeze > requirements.txt`|
 |Install packages on new PC|`py -m pip install -r requirements.txt`|
