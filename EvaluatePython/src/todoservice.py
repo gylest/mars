@@ -4,13 +4,13 @@
 # Start this web application running then type in relevent URL in browser to test each method
 #
 
-#
-# PyPI Packages
-#
+# Standard Python Library
 import base64
 import datetime
 import os
 from functools import wraps
+
+# 3rd Party Libraries
 import jwt
 from flask import Flask, jsonify, abort, make_response, request
 from dotenv import load_dotenv
