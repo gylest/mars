@@ -28,7 +28,7 @@ Some of the standard library modules used in this project:
 ## Package Management
 
 The Python Package Index (PyPI) is a repository of software for the Python programming language.
-The online store can be found here <https://pypi.org/>.
+The online store can be found here <https://pypi.org/>.  
 Use Package Installer for Python (pip) tool to install packages from this repository.  
 
 ### Packages in Project
@@ -39,10 +39,7 @@ Use Package Installer for Python (pip) tool to install packages from this reposi
 | flask  | A simple framework for building complex web applications |
 | lxml  | XML and HTML parser |
 | numpy | Fundamental package for array computing with Python |
-| pylint | python code static checker |
-| pipdeptree | Command line utility to show dependency tree of packages |
 | pyJWT | Python implementation of RFC 7519 (JSON Web Token) |
-| pyTest | Python testing framework |
 | python-dotenv | Read .env configuration file for python web applications |
 | requests | Simplified HTTP library |
 | selenium | Automate web browser interaction from Python |
@@ -55,6 +52,7 @@ Use Package Installer for Python (pip) tool to install packages from this reposi
 | debugpy | Debugger tool used by VSC |
 | pipdeptree | Command line utility to show dependency tree of packages |
 | pylint | Static code analyzer |
+| pyTest | Python testing framework |
 
 ### pip Commands
 
