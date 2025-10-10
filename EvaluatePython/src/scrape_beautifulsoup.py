@@ -1,4 +1,7 @@
-import re
+# Python Standard Library
+import re                               # Regular expressions
+
+# 3rd Party Libraries
 import requests
 from bs4 import BeautifulSoup
 
