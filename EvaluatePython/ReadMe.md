@@ -86,14 +86,14 @@ PyLint's behavior is control through a .pylintrc configuration file.
 
 For example to supress messages for "missing-function-docstring" add to section [MESSAGES CONTROL]
 
-## Running a Script
+## Running Scripts
 
-1. Open PowerShell terminal window
-2. Enter command:-
+1. Open PowerShell terminal window at root directory  
+2. Run main : `python src/main.py`  
+3. Run scrape_beautiful: `python src/scrape_beautifulsoop.py`  
+4. Run todoservice: `python src/todoservice.py`  
 
-    ```py main.py```
-
-## Debugging a Script
+## Debugging Scripts
 
 1. Open the script in editor
 2. Set breakpoints in Python code
