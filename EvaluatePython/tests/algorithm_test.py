@@ -1,10 +1,17 @@
 #
-# Program: Unit Test Script for Compute Module
+# Test Script: algorithm_test.py
+#
+# Purpose:
+#   Pytest-based tests for the functions in the algorithm module.
+#
+# Usage:
+#   Run with pytest from the project root directory.
 #
 # Notes  :
-# 1) The Python unit testing framework, sometimes referred to as “PyUnit,” is a Python language version of JUnit
-# 2) Online documentation (https://docs.python.org/3/library/unittest.html)
-# 3) A testcase is created by subclassing unittest.TestCase.
+#
+# 1) PyTest is currently the most popular test framework for Python
+# 2) Online documentation https://docs.pytest.org/en/stable
+# 3) PyTest can be run from command line or from within Visual Studio Code
 # 4) Each unit test name must start with "test" to be recognised by test runner
 # 5) Test Explorer in Visual Studio can be used as a test runner
 # 6) All unit tests must be written in the unit test pattern AAA (Arrange, Act and Assert)
