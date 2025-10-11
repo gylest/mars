@@ -1,21 +1,15 @@
-﻿using System;
-using System.Configuration;
-using System.Data;
-using Microsoft.Data.SqlClient;
-using System.Globalization;
-using System.Windows.Forms;
-using System.Diagnostics;
-
+﻿
 namespace BulkLoading
 {
     public partial class MainForm : Form
     {
-        const string ConnectionName = "PrimaryConnection";
-        readonly string connectionString;
+        private readonly AppSettings _appSettings;
+        private readonly string _connectionString;
 
-        public MainForm()
+        public MainForm(AppSettings appSettings, IConfiguration configuration)
         {
-            connectionString = AppSettings.PrimaryConnection;
+            _appSettings = appSettings;
+            _connectionString = configuration.GetConnectionString("PrimaryConnectionSQL");
 
             InitializeComponent();
         }
@@ -82,7 +76,7 @@ namespace BulkLoading
 
         private void btnRowBy_Click(object sender, EventArgs e)
         {
-            int MAXROWS = AppSettings.MaxRows ?? 1000;
+            int MAXROWS = _appSettings.MaxRows;
             DateTime begintm = DateTime.Now;
 
             try
@@ -91,7 +85,7 @@ namespace BulkLoading
                 {
                     MakeData(table, MAXROWS);
 
-                    using (SqlConnection connection = new SqlConnection(this.connectionString))
+                    using (SqlConnection connection = new SqlConnection(this._connectionString))
                     {
                         connection.Open();
 
@@ -133,7 +127,7 @@ namespace BulkLoading
 
         private void btnBulk_Click(object sender, EventArgs e)
         {
-            int MAXROWS = AppSettings.MaxRows ?? 1000;
+            int MAXROWS = _appSettings.MaxRows;
             DateTime begintm = DateTime.Now;
 
             try
@@ -142,7 +136,7 @@ namespace BulkLoading
                 {
                     MakeData(bulkTable, MAXROWS);
 
-                    using (SqlConnection connection = new SqlConnection(this.connectionString))
+                    using (SqlConnection connection = new SqlConnection(this._connectionString))
                     {
                         connection.Open();
 
@@ -177,7 +171,7 @@ namespace BulkLoading
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(this.connectionString))
+                using (SqlConnection con = new SqlConnection(this._connectionString))
                 {
                     con.Open();
 
