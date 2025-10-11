@@ -1,10 +1,6 @@
-﻿using System;
-using Microsoft.Extensions.Configuration;
+﻿namespace BulkLoading;
 
-namespace BulkLoading
+public class AppSettings
 {
-    public class AppSettings
-    {
-        public int MaxRows { get; set; } = 1000;
-    }
+    public int MaxRows { get; set; } = 1000;
 }
