@@ -5,6 +5,6 @@ namespace BulkLoading
 {
     public class AppSettings
     {
-        public int? MaxRows { get; set; } = 1000;
+        public int MaxRows { get; set; } = 1000;
     }
 }
