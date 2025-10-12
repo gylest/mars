@@ -16,13 +16,14 @@ static class Program
 
         // Setup Dependency Injection
         var services = new ServiceCollection();
+
+        // Register IConfiguration with DI
         services.AddSingleton<IConfiguration>(configuration);
 
-        // Bind AppSettings section to strongly typed class
-        var appSettings = new AppSettings();
-        configuration.GetSection("AppSettings").Bind(appSettings);
-        services.AddSingleton(appSettings);
+        // Register AppSettings with DI
+        services.AddSingleton(configuration.GetSection("AppSettings").Get<AppSettings>());
 
+        // Register MainForm with DI
         services.AddTransient<MainForm>();
 
         var serviceProvider = services.BuildServiceProvider();
