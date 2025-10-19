@@ -2,11 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Selenium.WebDriver" Version="4.36.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="141.0.7390.5400" />
+    <Using Include="OpenQA.Selenium" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Selenium.WebDriver" Version="4.37.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="141.0.7390.7800" />
     <PackageReference Include="xunit" Version="2.9.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
