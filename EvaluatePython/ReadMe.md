@@ -56,7 +56,7 @@ Use Package Installer for Python (pip) tool to install packages from this reposi
 
 ### pip Commands
 
-Note: Prefix each pip command with "py -m" to ensure the current python environment.
+Note: Prefix each pip command with `python -m` to ensure the current python environment.
 
 |Description|Command|
 |--|--|
