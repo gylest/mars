@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Using Include="BulkLoading.Configuration" />
+    <Using Include="BulkLoading.Services" />
+    <Using Include="BulkLoading.UI" />
     <Using Include="System.Data" />
     <Using Include="System.Diagnostics" />
     <Using Include="System.Globalization" />
