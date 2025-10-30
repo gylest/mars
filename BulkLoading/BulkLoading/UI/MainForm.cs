@@ -29,7 +29,7 @@ public partial class MainForm : Form
         {
            TimeSpan duration = _manageDatabase.ProcessRowByRow();
 
-           txtRowElapsed.Text = duration.Seconds.ToString(CultureInfo.CurrentCulture);
+           txtRowElapsed.Text = duration.TotalSeconds.ToString("F4",CultureInfo.CurrentCulture);
 
         }
         catch (Exception exc)
@@ -45,7 +45,7 @@ public partial class MainForm : Form
         {
             TimeSpan duration = _manageDatabase.ProcessBulk();
 
-            txtBulkElapsed.Text = duration.Seconds.ToString(CultureInfo.CurrentCulture);
+            txtBulkElapsed.Text = duration.TotalSeconds.ToString("F4", CultureInfo.CurrentCulture);
         }
         catch (Exception exc)
         {

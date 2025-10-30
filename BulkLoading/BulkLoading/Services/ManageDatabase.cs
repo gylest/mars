@@ -17,8 +17,7 @@ public class ManageDatabase
         DataColumn column;
         DataRow row;
 
-        // Create new DataColumn, set DataType, 
-        // ColumnName and add to DataTable.    
+        // Create first column
         column = new DataColumn
         {
             DataType = Type.GetType("System.Int32"),
@@ -29,7 +28,7 @@ public class ManageDatabase
         // Add the Column to the DataColumnCollection.
         tablex.Columns.Add(column);
 
-        // Create second column.
+        // Create second column
         column = new DataColumn
         {
             DataType = Type.GetType("System.String"),
@@ -41,7 +40,7 @@ public class ManageDatabase
         // Add the column to the table.
         tablex.Columns.Add(column);
 
-        // Create second column.
+        // Create third column
         column = new DataColumn
         {
             DataType = Type.GetType("System.String"),
@@ -68,42 +67,33 @@ public class ManageDatabase
     //
     public void CreateTable()
     {
-        try
+        using (SqlConnection con = new SqlConnection(_connectionString))
         {
-            using (SqlConnection con = new SqlConnection(_connectionString))
+            con.Open();
+
+            DataTable dTable = con.GetSchema("TABLES", new string[] { null, null, "Contact" });
+
+            if (dTable.Rows.Count == 0)
             {
-                con.Open();
+                string query = $"CREATE SCHEMA [BulkLoading]";
 
-                DataTable dTable = con.GetSchema("TABLES", new string[] { null, null, "Contact" });
-
-                if (dTable.Rows.Count == 0)
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    string query = $"CREATE SCHEMA [BulkLoading]";
-
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.ExecuteNonQuery();
-                        Debug.WriteLine("Schema Created Successfully");
-                    }
-                }
-
-                if (dTable.Rows.Count == 0)
-                {
-                    string query = $"CREATE TABLE [BulkLoading].[Contact]([id] [int] NOT NULL,[Name] [nvarchar](50) NOT NULL,[Address] [nvarchar](50) NULL,[Date] datetime2 DEFAULT GETDATE()) ON [PRIMARY]";
-
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.ExecuteNonQuery();
-                        Debug.WriteLine("Table Created Successfully");
-                    }
+                    cmd.ExecuteNonQuery();
+                    Debug.WriteLine("Schema Created Successfully");
                 }
             }
 
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine($"Exception during Schema/Table Creation. Message = {ex.Message}");
-            throw;
+            if (dTable.Rows.Count == 0)
+            {
+                string query = $"CREATE TABLE [BulkLoading].[Contact]([id] [int] NOT NULL,[Name] [nvarchar](50) NOT NULL,[Address] [nvarchar](50) NULL,[Date] datetime2 DEFAULT GETDATE()) ON [PRIMARY]";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.ExecuteNonQuery();
+                    Debug.WriteLine("Table Created Successfully");
+                }
+            }
         }
     }
 
