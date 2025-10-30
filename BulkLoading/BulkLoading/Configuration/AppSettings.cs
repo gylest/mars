@@ -1,4 +1,4 @@
-﻿namespace BulkLoading;
+﻿namespace BulkLoading.Configuration;
 
 public class AppSettings
 {

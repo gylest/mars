@@ -1,5 +1,5 @@
 ﻿
-namespace BulkLoading
+namespace BulkLoading.UI
 {
     partial class MainForm
     {
