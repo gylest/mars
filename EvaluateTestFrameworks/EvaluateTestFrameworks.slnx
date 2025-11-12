@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="ReadMe.md" />
+  </Folder>
+  <Project Path="CodeLibrary/CodeLibrary.csproj" />
+  <Project Path="MSTestFramework/MSTestFramework.csproj" />
+  <Project Path="NUnitFramework/NUnitFramework.csproj" />
+  <Project Path="SpecFlowFramework/SpecFlowFramework.csproj" />
+  <Project Path="XUnitFramework/XUnitFramework.csproj" />
+</Solution>
