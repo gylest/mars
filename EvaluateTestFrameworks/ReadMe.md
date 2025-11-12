@@ -12,26 +12,21 @@ The solution is designed for modern .NET development and leverages the latest fe
 
 ### 1. CodeLibrary
 - **Purpose:** Contains core business logic and shared code used by all test projects.
-- **Target Framework:** .NET 10
 
 ### 2. MSTestFramework
 - **Purpose:** Implements unit tests using the MSTest framework.
 - **Features:** Standard unit testing, code coverage analysis.
-- **Target Framework:** .NET 10
 
 ### 3. XUnitFramework
 - **Purpose:** Implements unit tests using the xUnit framework.
 - **Features:** Supports Selenium WebDriver for UI testing.
-- **Target Framework:** .NET 10
 
 ### 4. NUnitFramework
 - **Purpose:** Implements unit tests using the NUnit framework.
-- **Target Framework:** .NET 10
 
 ### 5. SpecFlowFramework
 - **Purpose:** Implements behavior-driven development (BDD) tests using SpecFlow.
 - **Features:** Gherkin syntax for feature files, step definitions in C#.
-- **Target Framework:** .NET 10
 
 ---
 
@@ -51,7 +46,7 @@ The solution is designed for modern .NET development and leverages the latest fe
 
 ## Improvements
 
-- **Unified .NET 9 Target:** All projects have been upgraded to target .NET 9 for consistency and access to the latest language/runtime features.  
+- **Unified .NET 10 Target:** All projects have been upgraded to target for consistency and access to the latest language/runtime features.  
 - **Modern Package Versions:** All NuGet dependencies are updated to their latest stable versions.  
 - **Cross-Framework Testing:** The solution demonstrates how to use multiple test frameworks side-by-side, aiding comparison and migration.  
 - **BDD Integration:** SpecFlow is included for teams adopting BDD practices.  
