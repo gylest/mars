@@ -15,7 +15,7 @@ def readimdbtop250():
     print(f'Start processing for {url}')
 
     # Get HTML and parse
-    response = requests.get(url)
+    response = requests.get(url,timeout=10)
     soup = BeautifulSoup(response.text, 'lxml')
 
     # Create items that map to HTML elements

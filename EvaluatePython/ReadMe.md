@@ -3,7 +3,7 @@
 ## Initial Setup
 
 1. Install the Python extension for VS Code  
-2. Install a Python interpreter (version 3.14 installed on 08/10/2025)  
+2. Install a Python interpreter (version 3.14.2 installed on 29/01/2026)  
 3. Select Python Interpreter for VS Code (select latest version), from Command Palette enter "Python: Select Interpreter"  
 4. Select Python testing framework for VS Code (select PyTest), from command palette enter "Python: Configure Tests"  
 
@@ -17,11 +17,11 @@ The Python Standard Library is a collection of modules and packages included wit
 
 Some of the standard library modules used in this project:
 
-| Module   | Description |
-|------------|-------------|
+| Module | Description |
+| ------------ | ------------- |
 | datetime | Date and time handling |
-| json  | JSON parsing |
-| math  | Mathmatical functions |
+| json | JSON parsing |
+| math | Mathmatical functions |
 | os | Operating system interfaces |
 | sys | System-specific parameters and functions |
 
@@ -33,11 +33,11 @@ Use Package Installer for Python (pip) tool to install packages from this reposi
 
 ### Packages in Project
 
-| Package    | Description |
-|------------|-------------|
+| Package | Description |
+| ------------ | ------------- |
 | beautifulsoup4 | Screen-scraping library |
-| flask  | A simple framework for building complex web applications |
-| lxml  | XML and HTML parser |
+| flask | A simple framework for building complex web applications |
+| lxml | XML and HTML parser |
 | numpy | Fundamental package for array computing with Python |
 | pyJWT | Python implementation of RFC 7519 (JSON Web Token) |
 | python-dotenv | Read .env configuration file for python web applications |
@@ -46,8 +46,8 @@ Use Package Installer for Python (pip) tool to install packages from this reposi
 
 ### Tools in Project
 
-| Package    | Description |
-|------------|-------------|
+| Package | Description |
+| ------------ | ------------- |
 | coverage | Code coverage tool |
 | debugpy | Debugger tool used by VSC |
 | pipdeptree | Command line utility to show dependency tree of packages |
@@ -74,6 +74,14 @@ Note: Prefix each pip command with `python -m` to ensure the current python envi
 |Verify packages|`python -m pip check`|
 |Show package dependencies|`python -m pipdeptree`|
 
+### Update All Outdated Packages
+
+In `PowerShell` terminal window run the following command to update all outdated packages:
+
+```powershell
+python -m pip list --outdated --format=json | ConvertFrom-Json | ForEach-Object { python -m pip install --upgrade $_.name }
+```
+
 ## Linting using PyLint
 
 Linting highlights syntactical and stylistic problems in your Python source code, which oftentimes helps you identify and correct subtle programming errors or unconventional coding practices that can lead to errors.
@@ -88,7 +96,7 @@ For example to supress messages for "missing-function-docstring" add to section 
 
 1. Open PowerShell terminal window at root directory  
 2. Run main : `python src/main.py`  
-3. Run scrape_beautiful: `python src/scrape_beautifulsoop.py`  
+3. Run scrape_beautiful: `python src/scrape_beautifulsoup.py`  
 4. Run todoservice: `python src/todoservice.py`  
 
 ## Debugging Scripts
@@ -106,7 +114,7 @@ For example to supress messages for "missing-function-docstring" add to section 
 
 ## Code Coverage
 
-1. Run tests with coverage: `coverage run -m pytest`  
+1. Run tests with coverage: `coverage run --source=src -m pytest`  
 2. Generate coverage report: `coverage report`  
 3. Generate HTML report: `coverage html`  
 4. Open file `htmlcov\index.html` with `Live Server`  

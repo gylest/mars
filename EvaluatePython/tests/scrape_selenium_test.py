@@ -15,11 +15,11 @@
 import pytest
 import src.scrape_selenium as scrape_selenium
 
-@pytest.fixture
-def driver():
-    driver = scrape_selenium.create_driver()
-    yield driver
-    scrape_selenium.close_driver(driver)
+@pytest.fixture(name="driver")
+def driver_fixture():
+    the_driver = scrape_selenium.create_driver()
+    yield the_driver
+    scrape_selenium.close_driver(the_driver)
 
 def test_search_in_python_org(driver):
     search_value="pycon"
