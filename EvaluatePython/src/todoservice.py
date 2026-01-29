@@ -20,7 +20,7 @@ load_dotenv()
 
 # Valid users for login
 users = {
-    os.environ.get('USERNAME'): os.environ.get('PASSWORD')
+    os.environ.get('USERNAME_WA'): os.environ.get('PASSWORD_WA')
 }
 
 # Create a new Flask web application instance
@@ -190,6 +190,9 @@ def login():
         return jsonify({'message': 'Invalid Basic Auth format'}), 401
 
     if username not in users or users[username] != password:
+        print(f"login: Invalid login attempt for user = {username}")
+        print(users)
+        print(password)
         return jsonify({'message': 'Invalid credentials'}), 401
 
     payload = {

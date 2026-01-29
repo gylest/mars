@@ -21,10 +21,10 @@ PRIME_MINISTER = {
 
 # Definition for a  binary tree node
 class TreeNode:
-    def __init__(self, pValue, pLeftNode=None, pRightNode=None):
-        self.val = pValue
-        self.left = pLeftNode
-        self.right = pRightNode
+    def __init__(self, value, left_node=None, right_node=None):
+        self.val = value
+        self.left = left_node
+        self.right = right_node
 
 
 #
@@ -54,8 +54,8 @@ def calculate_file_hash(filename):
 # Multiply 2 Numbers
 #
 def multiply_two(number_one, number_two):
-    retValue = number_one * number_two
-    return retValue
+    return_value = number_one * number_two
+    return return_value
 
 #
 # Calculate Square Root using Newton-Raphson method
@@ -129,8 +129,8 @@ def is_valid_permutation(a:any):
         return return_value
 
     max_value = sorted_a[-1]
-    B = list(range(1, max_value+1))
-    diff = list(set(B)-set(sorted_a))
+    b = list(range(1, max_value+1))
+    diff = list(set(b)-set(sorted_a))
 
     if len(diff) == 0:
         return_value = 1
@@ -159,7 +159,7 @@ def fizzbuzz(n):
 # Fibonacci Sequence Test
 # The next number is found by adding up the two numbers before it.
 # Write a program that prints n numbers from  fibonacci sequence
-def FibonacciSequence(n):
+def fibonacci_sequence(n):
     a, b = 0, 1
     # use underscore(_) character in for expression to indicate not interested in the index
     for _ in range(n):
@@ -170,17 +170,17 @@ def FibonacciSequence(n):
 # Add 5 to a number in such a way to make number the biggest possible value
 # e.g. 268 => 5268, 940 = 9540
 #
-def Add5ToGiveMaxNumber(N):
+def add5_to_give_max_number(n):
     result = 0
     resultstr = ""
     digit = 5
 
-    positive = N >= 0
+    positive = n >= 0
     done = False
 
-    strNumber = str(abs(N))
+    string_number = str(abs(n))
 
-    for ch in strNumber:
+    for ch in string_number:
         thisdigit = int(ch)
         if (digit >= thisdigit) and positive and (not done):
             resultstr += str(digit) + str(thisdigit)
@@ -191,7 +191,7 @@ def Add5ToGiveMaxNumber(N):
         else:
             resultstr += str(thisdigit)
 
-    if (not done):
+    if not done:
         resultstr += str(digit)
         done = True
 
@@ -205,21 +205,21 @@ def Add5ToGiveMaxNumber(N):
 #
 # Binary Tree Traversal: Bottom to top from left to right
 #
-def BinaryTreeTraversal_BottomToTop(root):
+def binary_tree_traversal_bottom_to_top(root):
     if root is None:
         return []
     # In the first stage, we store hte nodes (not their value).
     result = []
-    nextLayer = [root]
-    while len(nextLayer) != 0:
-        result.append(nextLayer)
+    next_layer = [root]
+    while len(next_layer) != 0:
+        result.append(next_layer)
         # Gather the nodes in the next deeper layer.
-        nextLayer = []
+        next_layer = []
         for father in result[-1]:
             if father.left is not None:
-                nextLayer.append(father.left)
+                next_layer.append(father.left)
             if father.right is not None:
-                nextLayer.append(father.right)
+                next_layer.append(father.right)
     # In the second stage, we convert the nodes into their values.
     result = [[node.val for node in layer] for layer in result]
     return result[::-1]
@@ -227,21 +227,21 @@ def BinaryTreeTraversal_BottomToTop(root):
 #
 # Binary Tree Traversal: Top to Bottom from left to right
 #
-def BinaryTreeTraversal_TopToBottom(root):
+def binary_tree_traversal_top_to_bottom(root):
     if root is None:
         return []
     # In the first stage, we store hte nodes (not their value).
     result = []
-    nextLayer = [root]
-    while len(nextLayer) != 0:
-        result.append(nextLayer)
+    next_layer = [root]
+    while len(next_layer) != 0:
+        result.append(next_layer)
         # Gather the nodes in the next deeper layer.
-        nextLayer = []
+        next_layer = []
         for father in result[-1]:
             if father.left is not None:
-                nextLayer.append(father.left)
+                next_layer.append(father.left)
             if father.right is not None:
-                nextLayer.append(father.right)
+                next_layer.append(father.right)
     # In the second stage, we convert the nodes into their values.
     result = [[node.val for node in layer] for layer in result]
     return result
@@ -249,13 +249,13 @@ def BinaryTreeTraversal_TopToBottom(root):
 #
 # Calculate factorial for a number (n)
 #
-def Factorial(num):
-    factorial = 0
+def factorial(num):
+    factorial_return = 0
 
     # check if the number is negative, positive or zero
     if num > 0:
-        factorial = 1
+        factorial_return = 1
         for i in range(1, num + 1):
-            factorial = factorial*i
+            factorial_return = factorial_return*i
 
-    return factorial
+    return factorial_return

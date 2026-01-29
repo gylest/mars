@@ -131,44 +131,45 @@ def test_is_valid_permutation_valid_2():
     ("N123", -123, -1235),
     ("N916", -916, -5916),
     ])
-def test_Add5ToGiveMaxNumber(name, value, expected):
+def test_add5_to_give_max_number(name, value, expected):
 
-    actual = algorithm.Add5ToGiveMaxNumber(value)
+    actual = algorithm.add5_to_give_max_number(value)
 
+    assert name is not None and isinstance(name, str)
     assert expected == actual
 
-def createBinaryTree():
+def create_binary_tree():
     #---------------------------------------------------------------------------------------------------------------------
     # Create Binary Tree
     # Nodes can be either a) Root Node, b) Leaf Node (node with no children), c) Intermediate Node (node with children)
     # Node Levels: Start at top with level 0, then level 1 etc
     # Element Numbers: Root = 1, Next Level first element to left = 2, element to tight = 3 etc
     #---------------------------------------------------------------------------------------------------------------------
-    leafNodeL2E4 = algorithm.TreeNode(15)
-    leafNodeL2E5 = algorithm.TreeNode(7)
-    leafNodeL1E2 = algorithm.TreeNode(9)
-    intNodeL1E3  = algorithm.TreeNode(20,leafNodeL2E4,leafNodeL2E5)
-    rootNodeL0E1 = algorithm.TreeNode(3,leafNodeL1E2,intNodeL1E3)
+    leaf_node_l2e4 = algorithm.TreeNode(15)
+    leaf_node_l2e5 = algorithm.TreeNode(7)
+    leaf_node_l1e2 = algorithm.TreeNode(9)
+    int_node_l1e3  = algorithm.TreeNode(20,leaf_node_l2e4,leaf_node_l2e5)
+    root_node_l0e1 = algorithm.TreeNode(3,leaf_node_l1e2,int_node_l1e3)
 
-    return rootNodeL0E1
+    return root_node_l0e1
 
-def test_BinaryTreeTraversal_TopToBottom_1():
+def test_binary_tree_traversal_top_to_bottom_1():
 
     expected = [[3], [9,20], [15,7]]
 
-    binaryTree = createBinaryTree()
+    binary_tree = create_binary_tree()
 
-    actual = algorithm.BinaryTreeTraversal_TopToBottom(binaryTree)
+    actual = algorithm.binary_tree_traversal_top_to_bottom(binary_tree)
 
     assert expected == actual
 
-def test_BinaryTreeTraversal_BottomToTop_1():
+def test_binary_tree_traversal_bottom_to_top_1():
 
     expected = [[15,7], [9,20], [3]]
 
-    binaryTree = createBinaryTree()
+    binary_tree = create_binary_tree()
 
-    actual = algorithm.BinaryTreeTraversal_BottomToTop(binaryTree)
+    actual = algorithm.binary_tree_traversal_bottom_to_top(binary_tree)
 
     assert expected == actual
 
@@ -178,10 +179,10 @@ def notatest():
 
     pytest.fail("This test should not be run!")
 
-def test_Factorial():
+def test_factorial():
 
     expected = 5040
 
-    actual = algorithm.Factorial(7)
+    actual = algorithm.factorial(7)
 
     assert expected == actual

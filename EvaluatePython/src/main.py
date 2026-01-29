@@ -49,7 +49,7 @@ import algorithm                          # My own code module
 #
 # Setup
 #
-def fSetup():
+def setup():
     # Create temp folder if it does not exist
     folder_path = "temp"
     os.makedirs(folder_path, exist_ok=True)
@@ -59,7 +59,7 @@ def fSetup():
 #
 
 
-def fOutput():
+def output_print():
     # Simple output using f-string formatting
     print(f'Hello World on {datetime.now().strftime("%c")}')
     print(f'Platorm: {sys.platform}')
@@ -73,13 +73,13 @@ def fOutput():
     print(2 ** 6)
 
     # Print a word multiple times
-    firstWord = 'Spam!'
-    print(firstWord * 8)
+    first_word = 'Spam!'
+    print(first_word * 8)
 
     # Print array values
-    L = [123, 'spam', 1.23]
-    print("Length of list:", len(L))
-    print(L[0], L[1], L[2])
+    l = [123, 'spam', 1.23]
+    print("Length of list:", len(l))
+    print(l[0], l[1], l[2])
 
 #
 # 2. Variables and Scope
@@ -93,7 +93,7 @@ def fOutput():
 # String variables can be declared either by using single or double quotes.
 
 
-def fVariables():
+def variables_scope():
     v1 = 5
     v2 = "John"
     print(v1)
@@ -122,7 +122,7 @@ def fVariables():
 # Miscellaneous:    none
 
 
-def fDataTypes():
+def data_types():
 
     s1 = "Hello World"                              # str
     s2 = str(7689)                                  # str, being set explicitly
@@ -130,6 +130,8 @@ def fDataTypes():
     s3 = hex(99)
     # str, binary string prefixed with '0b'
     s4 = bin(99)
+
+    print(s1,s2,s3,s4)
 
     i1 = 20                                         # int
     i2 = int(400)                                   # int, being set explicitly
@@ -141,6 +143,8 @@ def fDataTypes():
     c1 = 1j                                         # complex
     c2 = complex(i1)                                # complex
 
+    print(i1,i2,f1,f2,c1,c2)
+
     l1 = ["apple", "banana", "cherry"]              # list
     t1 = ("apple", "banana", "cherry")              # tuple
     r1 = range(5)                                   # range
@@ -149,16 +153,23 @@ def fDataTypes():
     # frozenset. This is an immutable set and values cannot be changed.
     s2 = frozenset({"apple", "banana", "cherry"})
 
+    print(l1,t1,r1,d1,s1,s2)
+
     b1 = True                                       # bool
     b2 = False                                      # bool
     b3 = bool(1)                                    # bool
+
+    print(b1,b2,b3)
 
     bin1 = b"Hello"                                 # bytes
     bin2 = bytearray(5)                             # bytearray
     bin3 = memoryview(bytes(5))                     # memoryview
 
+    print(bin1,bin2,bin3)
+
     # NoneType. This is the Python equivalent to NULL in other languages
     n1 = None
+    print(n1)
 
     # Get type
     x = ("apple", "banana", "cherry")
@@ -168,24 +179,29 @@ def fDataTypes():
     # Multiline string using 3 double quotes (or three single quotes)
     n = """To be or
     not to be"""
+    print(n)
+
+    #
 
 #
 # 4. Operators
 #
 
 
-def fOperators():
+def operators():
     # Arithemtic Operators
     ao1, ao2, ao3 = 2, 7, 26
 
-    aoresult1 = ao1 + ao2
-    aoresult2 = ao1 - ao2
-    aoresult3 = ao1 * ao2
-    aoresult4 = ao3 / ao2
-    aoresult5 = 9 % ao2           # Modulus i.e. remainder
-    aoresult6 = ao2 ** 3            # Exponentiation
+    res_1 = ao1 + ao2
+    res_2 = ao1 - ao2
+    res_3 = ao1 * ao2
+    res_4 = ao3 / ao2
+    res_5 = 9 % ao2           # Modulus i.e. remainder
+    res_6 = ao2 ** 3            # Exponentiation
     # Floor division, divide and drop fractional part. Expected result = 3
-    aoresult7 = 22 // 7
+    res_7 = 22 // 7
+
+    print(res_1, res_2, res_3, res_4, res_5, res_6, res_7)
 
     # Assignment Operators
     z = 15
@@ -265,7 +281,7 @@ def fOperators():
 #    * Dictionary{} is a collection which is unordered, changeable and indexed. No duplicate members.
 
 
-def fCollections():
+def collections():
     #
     # List []
     #
@@ -273,28 +289,31 @@ def fCollections():
     # First element = 0 Last element  = -1
     # Changeable
     # Duplicates
-    fruitsList = ["apple", "banana", "cherry", "lemon", "orange"]
-    print(fruitsList)
-    fruitsList.append("grapefruit")
-    print(fruitsList)
-    print("First item           = " + fruitsList[0])
-    print("Second item          = " + fruitsList[1])
-    print("Third item           = " + fruitsList[2])
-    print("Second to last item  = " + fruitsList[-2])
-    print("Last  item           = " + fruitsList[-1])
-    fruitsList[0] = "blackberries"                 # Change element
-    fruitsother = fruitsList[1:3]                  # Get items 1 to 2
-    fruitsother = fruitsList[:4]                   # Get items 0 to 3
-    print(fruitsList)
+    fruits_list = ["apple", "banana", "cherry", "lemon", "orange"]
+    print(fruits_list)
+    fruits_list.append("grapefruit")
+    print(fruits_list)
+    print("First item           = " + fruits_list[0])
+    print("Second item          = " + fruits_list[1])
+    print("Third item           = " + fruits_list[2])
+    print("Second to last item  = " + fruits_list[-2])
+    print("Last  item           = " + fruits_list[-1])
+    fruits_list[0] = "blackberries"                 # Change element
+    fruits_other = fruits_list[1:3]                  # Get items 1 to 2
+    fruits_other = fruits_list[:4]                   # Get items 0 to 3
+    print(fruits_list)
+    print(fruits_other)
 
     # Enumerate list
-    for i, value in enumerate(fruitsList):
+    for i, value in enumerate(fruits_list):
         print(f'Fruit[{i}] = {value}')
 
     # Sort list
-    unsortedAnimals = ["tiger", "zebra", "badger",
+    unsorted_animals = ["tiger", "zebra", "badger",
                        "owl", "lion", "bear", "gazelle", "termite"]
-    sortedAnimals = sorted(unsortedAnimals)
+    sorted_animals = sorted(unsorted_animals)
+
+    print(sorted_animals)
 
     # Remove duplicates from a list
     duplist = ["a", "b", "a", "c", "c"]
@@ -315,10 +334,15 @@ def fCollections():
 
     # Create list from range()
     mylist = list(range(20))
+    print(mylist)
 
     # Create list using list comprehension
     squares = [x**2 for x in range(11)]
     cubes = [x**3 for x in range(15)]
+    print(squares)
+    print(cubes)
+
+    #
 
     #
     # Tuples()
@@ -327,16 +351,17 @@ def fCollections():
     # First element = 0 Last element  = -1
     # Immutable
     # Duplicates
-    fruitsTuple = ("starfruit", "persimmon", "feijoa", "jackfruit", "papaya")
-    print(fruitsTuple[1])         # 2nd item
-    print(fruitsTuple[-1])        # last item
+    fruits_tuple = ("starfruit", "persimmon", "feijoa", "jackfruit", "papaya")
+    print(fruits_tuple[1])         # 2nd item
+    print(fruits_tuple[-1])        # last item
 
-    for x in fruitsTuple:
+    for x in fruits_tuple:
         print(x)
 
     # concatenate tuples (cannot concat string only)
-    exoticFruitsTuple = ("Rambutan", "Durian")
-    allfruits = fruitsTuple + exoticFruitsTuple
+    exotic_fruits_tuple = ("Rambutan", "Durian")
+    all_fruits = fruits_tuple + exotic_fruits_tuple
+    print(all_fruits)
 
     # slice() object
     alphabet = ("a", "b", "c", "d", "e", "f", "g", "h")
@@ -344,7 +369,10 @@ def fCollections():
     print(alphabet[slice3to5])  # Expect ("d", "e")
 
     # unpack a tuple
-    fruit1, fruit2, fruit3, fruit4, fruit5 = fruitsTuple
+    fruit1, fruit2, fruit3, fruit4, fruit5 = fruits_tuple
+    print(fruit1, fruit2, fruit3, fruit4, fruit5)
+
+    #
 
     #
     # Sets  {}
@@ -352,24 +380,26 @@ def fCollections():
 
     # Cannot access elements by a number! But can add or remove
     # No duplicates
-    carsSet = {"Mustang", "Panda", "Capri", "Jaguar"}
-    morecarsSet = {"X5", "Q7", "Panda"}
-    carsSet.add("Touareg")
+    cars_set = {"Mustang", "Panda", "Capri", "Jaguar"}
+    more_cars_set = {"X5", "Q7", "Panda"}
+    cars_set.add("Touareg")
     # Update set with contents of another set, but remove duplicates
-    carsSet.update(morecarsSet)
-    print(carsSet)
+    cars_set.update(more_cars_set)
+    print(cars_set)
     # Remove an element from a set if it is a member
-    carsSet.discard("Porsche")
+    cars_set.discard("Porsche")
 
     #
     # Dictionary {}
     #
 
-    # Create empty dictionarty
-    emptyDict = {}
+    # Create empty dictionary
+    empty_dict = {}
+    if not empty_dict:
+        print("The dictionary is empty")
 
     # Create a dictionary with items of key/value pairs
-    carDict = {
+    car_dict = {
         "brand": "Ford",
         "model": "Mustang",
         "year": 1964,
@@ -379,56 +409,57 @@ def fCollections():
     }
 
     # Print a value for a key
-    print(carDict["model"])
+    print(car_dict["model"])
 
     # Add a new item
-    carDict["topspeed"] = 120
-    print("Dictionary length = " + str(len(carDict)))
-
+    car_dict["topspeed"] = 120
+    print("Dictionary length = " + str(len(car_dict)))
     # Remove an item
-    carDict.pop("interior")
+    car_dict.pop("interior")
 
     # Update existing item
-    carDict["colour"] = "dark blue"
+    car_dict["colour"] = "dark blue"
 
     # Get lowest and highest keys (only works if all keys of same type)
-    lowest = min(carDict)   # Expect "brand"
-    highest = max(carDict)   # Expect "year"
+    lowest = min(car_dict)   # Expect "brand"
+    highest = max(car_dict)   # Expect "year"
+    print(lowest, highest)
 
     # Check if key in dictionary
-    checkKey = "color"
-    if checkKey in carDict:
-        print("Key Found: ", checkKey)
+    check_key = "color"
+    if check_key in car_dict:
+        print("Key Found: ", check_key)
 
     # Enumerate dictionary
-    for k, v in carDict.items():
+    for k, v in car_dict.items():
         print("Key=", k, "Value=", v)
 
     # Create a dictionary with multiple values per key.
     def group_by_owners(pfiles):
         # create empty dictionary
-        dictResult = {}
+        dict_result = {}
 
         # k, v mapping to v, k
         for key, value in pfiles.items():
-            newKey = value
-            newValue = key
-            dictResult.setdefault(newKey, []).append(newValue)
+            new_key = value
+            new_value = key
+            dict_result.setdefault(new_key, []).append(new_value)
 
-        return dictResult
+        return dict_result
 
     # For given dictionary input, create new dictionary output with multiple values for keys
     files = {'Input.txt': 'Randy', 'Code.py': 'Stan', 'Output.txt': 'Randy'}
     expected = {'Randy': ['Input.txt', 'Output.txt'], 'Stan': ['Code.py']}
 
     print(group_by_owners(files))
+    print(expected)
 
 #
 # 6. Conditional Statements
 #
 
 
-def fConditional():
+def conditional():
     # Python Indentation
     # Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
     # Python uses indentation to indicate a block of code.
@@ -436,10 +467,10 @@ def fConditional():
     # In the if statement  below, if print... was not idnented it would generate a run-time error
 
     # If Statement
-    conNumber = 23
-    if conNumber < 10:
+    con_number = 23
+    if con_number < 10:
         print("Number is less than 10")
-    elif 10 < conNumber <= 50:
+    elif 10 < con_number <= 50:
         print("Number is between 10 and 50")
     else:
         print("Number is greater than 50 ")
@@ -449,8 +480,7 @@ def fConditional():
     while i < 6:
         print(i)
         i += 1
-    else:
-        print("i is no longer less than 6")
+    print("i is no longer less than 6")
 
     # For Loop
     numbersum = 0
@@ -514,7 +544,7 @@ def person_report(**kwargs):
     return person
 
 
-def fFunctions():
+def functions():
     # map() function returns a map object(which is an iterator) of the results after applying the given function to each item
     numbers = [1, 2, 3, 4]
     result1 = map(double_number, numbers)
@@ -541,14 +571,16 @@ def fFunctions():
     print(todays_weather)
 
     # Call function with a variable number of key word arguments
-    aPerson = person_report(
-        firstName='Tony', surName='Gyles', age=56, city='Basingstoke')
+    a_person = person_report(first_name='Tony', sur_name='Gyles', age=56, city='Basingstoke')
+    print(a_person)
 
     # Call Lambda Functions
-    def add10(a): return a + 10
+    def add10(a):
+        return a + 10
     print(add10(5))
 
-    def multiplytwo(x, y): return x * y
+    def multiplytwo(x, y):
+        return x * y
     print(multiplytwo(6, 9))
 
 #
@@ -572,7 +604,7 @@ class Person:
         print(self.firstname, self.lastname)
 
     def chanceofcancer(self):
-        return(self.age*self.cancerrisk)
+        return self.age*self.cancerrisk
 
     # Class method can change class variables or even instantiate and return an object
     @classmethod
@@ -580,8 +612,8 @@ class Person:
         cls.cancerrisk = risk
 
     @staticmethod     # Static method using independent data and code
-    def check_tall_enough(heightMetres):
-        if heightMetres > 1.5:
+    def check_tall_enough(height_metres):
+        if height_metres > 1.5:
             return True
         else:
             return False
@@ -593,7 +625,7 @@ class Address:
     pass
 
 
-def fClasses():
+def classes():
     # Create object from class definition
     p1 = Person("John", "Doe", 35)
     p1.printname()
@@ -607,7 +639,8 @@ def fClasses():
           "Age:", p2.age, "Chance of cancer:", p2.chanceofcancer())
 
     # Using static method
-    tallEnough = Person.check_tall_enough(1.6)
+    tall_enough = Person.check_tall_enough(1.6)
+    print("Is person tall enough?", tall_enough)
 
 #
 # 9. Inheritance
@@ -627,7 +660,7 @@ class Student(Person):
               " to the class of ", self.graduationyear)
 
 
-def fInheritance():
+def inheritance():
     # Create object from class definition
     s1 = Student("James", "Gyles", 24, 2019)
 
@@ -666,14 +699,14 @@ class MyNumbers:
             raise StopIteration
 
 
-def fIterators():
+def iterators():
     # An iterator is an object that contains a countable number of values
     # Technically, in Python, an iterator is an object which implements the iterator protocol, which consist of the methods __iter__() and __next__()
     nuts = ("brazil", "hazelnut", "peanut", "walnut")
-    nutsIter = iter(nuts)
+    nuts_iter = iter(nuts)
 
-    print(next(nutsIter))
-    print(next(nutsIter))
+    print(next(nuts_iter))
+    print(next(nuts_iter))
 
     print("Instead of next() can use for loop")
     for x in nuts:
@@ -684,9 +717,9 @@ def fIterators():
         print(x)
 
     numbers = MyNumbers(12)
-    numbersIter = iter(numbers)
+    numbers_iter = iter(numbers)
 
-    for x in numbersIter:
+    for x in numbers_iter:
         print(x, end=' ')
     print()
 
@@ -696,7 +729,7 @@ def fIterators():
 # You can choose to import only parts from a module, by using the from keyword e.g. from compute import primeminister
 
 
-def fModules():
+def modules():
     # Using my own custom module
     print(algorithm.greeting("April"))
 
@@ -708,7 +741,7 @@ def fModules():
 #
 
 
-def fDates():
+def dates():
     # A date in Python is not a data type of its own, but we can import a module named datetime to work with dates as date objects.
     now = datetime.now()
     print(now)
@@ -737,54 +770,55 @@ def fDates():
 #
 
 
-def fJson():
+def json_conversions():
     #
     # Convert from JSON to Python
     #
-    jsonWorker = '{ "name":"John", "age":30, "city":"New York"}'
+    json_worker = '{ "name":"John", "age":30, "city":"New York"}'
 
     # parse json into a dictionary
-    dictWorker = json.loads(jsonWorker)
+    dict_worker = json.loads(json_worker)
 
     # the result is a Python dictionary:
-    print("Name:", dictWorker["name"])
-    print("Age:", dictWorker["age"])
-    print("City:", dictWorker["city"])
+    print("Name:", dict_worker["name"])
+    print("Age:", dict_worker["age"])
+    print("City:", dict_worker["city"])
 
     #
     # Convert from Python to JSON
     #
     # a Python object (dict):
-    dictCityWorker = {
+    dict_city_worker = {
         "name": "John",
         "age": 30,
         "city": "New York"
     }
 
     # convert python dict into string with valid JSON
-    strCityWorker = json.dumps(dictCityWorker)
-    print(strCityWorker)
+    str_city_worker = json.dumps(dict_city_worker)
+    print(str_city_worker)
 
 #
 # 14. Regular Expressions (Standard Library)
 #
 
 
-def fRegExp():
+def regular_expressions():
     txt = "The rain in Spain"
-    listWords = re.findall("ai", txt)
-    print("List Words:", listWords)
+    list_words = re.findall("ai", txt)
+    print("List Words:", list_words)
 
 #
 # 15. Try ... Except
 #
 
 
-def fException():
+def exceptions():
     try:
         numerator = 10
         denominator = 0
-        divValue = numerator / denominator
+        result = numerator / denominator
+        print("Result is ", result)
     except ArithmeticError:
         exception_info = sys.exc_info()
         print("Exception during math operation, reported value = ",
@@ -797,7 +831,7 @@ def fException():
 #
 
 
-def fUserInput():
+def user_input():
     username = input("Enter username:")
     print("Username is: " + username)
 
@@ -806,7 +840,7 @@ def fUserInput():
 #
 
 
-def fStrings():
+def strings():
     # Simple string functions
     forename = "Jessica"
     forename_lower = forename.lower()
@@ -814,10 +848,14 @@ def fStrings():
     forename_reverse = forename[::-1]
     forename_replace = forename.replace("ica", "")
 
+    print(forename_lower, forename_upper, forename_reverse, forename_replace)
+
     spaced_name = " Freddy the Frog "
     spaced_strip = spaced_name.strip()   # Strip spaces from left and right
     spaced_left_strip = spaced_name.lstrip()  # Strip spaces from left
     spaced_right_strip = spaced_name.rstrip()  # Strip spaces from right
+
+    print(spaced_strip,spaced_left_strip,spaced_right_strip)
 
     # Get digits sequence
     digits = string.digits
@@ -834,24 +872,25 @@ def fStrings():
     # f-strings
     amount = 450
     orderid = 6281718
-    orderMessage = f"Hello, Your order {orderid} for the amount {amount} is complete."
-    print(orderMessage)
+    order_message = f"Hello, Your order {orderid} for the amount {amount} is complete."
+    print(order_message)
 
 #
 # 18. File Handling and OS module
 #
 
 
-def fFiles():
+def file_handling():
     # setup
-    NEW_FILE = "temp/newfile.txt"
-    PICKLE_FILE = "temp/emp1.pkl"
+    new_filename = "temp/newfile.txt"
+    pickle_filename = "temp/emp1.pkl"
 
     # Create new file/delete if exists
-    filename = NEW_FILE
+    filename = new_filename
     if os.path.exists(filename):
         os.remove(filename)
     f1 = open(filename, "x", encoding="utf-8")
+    f1.close()
 
     # Write string to a text file
     # Open file for writing in text mode (which is default mode)
@@ -860,32 +899,32 @@ def fFiles():
     f2.close()
 
     # Write list to text file
-    contentList = ["Overwatch 10/10\n", "Gwent 9/10\n", "Borderlands 3 8/10\n"]
-    filenameGames = "temp/MyBestGames.txt"
-    f4 = open(filenameGames, 'w', encoding="utf-8")
-    f4.writelines(contentList)
+    content_list = ["Overwatch 10/10\n", "Gwent 9/10\n", "Borderlands 3 8/10\n"]
+    filename_games = "temp/MyBestGames.txt"
+    f4 = open(filename_games, 'w', encoding="utf-8")
+    f4.writelines(content_list)
     f4.close()
 
     # Read text file into a list
-    f4 = open(filenameGames, 'r', encoding="utf-8")
-    Lines = f4.readlines()             # Read all lines into a list
+    f4 = open(filename_games, 'r', encoding="utf-8")
+    lines = f4.readlines()             # Read all lines into a list
 
-    for line in Lines:
-        strippedLine = line.strip()
-        print(strippedLine)
+    for line in lines:
+        stripped_line = line.strip()
+        print(stripped_line)
 
     # Write dictionary and list to file (Pickling)
     people = ["john doe", "andrew webber", "terry hart"]
     clanguages = {"Python": 3.7, "C#": 8, "Java": 13}
     # Open file for writing in binary mode
-    pickle_file = open(PICKLE_FILE, "wb")
+    pickle_file = open(pickle_filename, "wb")
     pickle.dump(people, pickle_file)
     pickle.dump(clanguages, pickle_file)
     pickle_file.close()
 
     # Read dictionary and list from file (Unpickling)
     # Open file for reading in binary mode
-    pickle_file = open(PICKLE_FILE, 'rb')
+    pickle_file = open(pickle_filename, 'rb')
     people_list = pickle.load(pickle_file)
     clanguages_dict = pickle.load(pickle_file)
     print(f"Unpickle list: {people_list}")
@@ -897,14 +936,14 @@ def fFiles():
 #
 
 
-def fLogging():
+def logging_package():
     # Setup
-    LOG_FILE = "temp/evaluatepython.log"
+    log_filename = "temp/evaluatepython.log"
 
     # If you do not set a file then logging will go to console
     # The log level determines what gets output.
     # Log levels are highest to lowest ["CRITICAL","ERROR","WARNING","INFO","DEBUG"]
-    logging.basicConfig(filename=LOG_FILE, level=logging.INFO, filemode='w')
+    logging.basicConfig(filename=log_filename, level=logging.INFO, filemode='w')
     logging.debug('This message will not go to the log file')
     logging.info('This will be logged')
     logging.warning('And this, too')
@@ -929,22 +968,21 @@ class ThreadWithReturnValue(Thread):
         return self._return
 
 
-def fThreading():
+def threading():
     # To get return value from function called by Thread , must use this helper class
-    inputValue = 2450.0
+    input_value = 2450.0
     thread1 = ThreadWithReturnValue(
-        target=algorithm.square_root, args=(inputValue,))
+        target=algorithm.square_root, args=(input_value,))
     thread1.start()
     result1 = thread1.join()
     logging.info("Square root of %s = %s", str(
-        inputValue), str(round(result1, 4)))
-
+        input_value), str(round(result1, 4)))
 #
 # 21. Collections
 #
 
 
-def fAdvancedCollections():
+def advanced_collections():
     #
     # Counter - It keeps a count of the number of occurrences of any value in the container (subclass of dictionary)
     #
@@ -953,7 +991,8 @@ def fAdvancedCollections():
     counter = Counter(['a', 'b', 'c', 'a', 'b', 'a'])
 
     # Create dictionary from counter
-    dictCounter = dict(counter)
+    dict_counter = dict(counter)
+    print("Dictionary from Counter:", dict_counter)
 
     # loop counter
     for i in counter.elements():
@@ -961,6 +1000,7 @@ def fAdvancedCollections():
 
     # get most common
     common = counter.most_common(2)
+    print("Most common 2:", common)
 
     #
     # Deque - Double-ended queue. Can add or remove items from both ends
@@ -990,17 +1030,17 @@ def fAdvancedCollections():
 #
 
 
-def fTests():
+def tests():
     algorithm.fizzbuzz(100)
 
-    algorithm.FibonacciSequence(10)
+    algorithm.fibonacci_sequence(10)
 
 #
 # 23. PIP (Package Manager for Python)
 #
 
 
-def fPip():
+def package_manager():
     # Install package "numpy" using PIP from PyPI
     a = np.array([20, 30, 40, 50])
     b = np.arange(4)
@@ -1032,7 +1072,7 @@ def say_hi():
     return 'hello there'
 
 
-def fDecorators():
+def decorators():
     print("Uppercase Decorator result: ", say_hi())
 
 #
@@ -1040,7 +1080,7 @@ def fDecorators():
 #
 
 
-def fInternetProtocols():
+def internet_protocols():
     # Create a v4 uuid
     myuuid = uuid.uuid4()
 
@@ -1051,33 +1091,32 @@ def fInternetProtocols():
 # Main Entry Point
 #
 def main():
-    fSetup()
-    fOutput()
-    fVariables()
-    fDataTypes()
-    fOperators()
-    fCollections()
-    fConditional()
-    fFunctions()
-    fClasses()
-    fInheritance()
-    fIterators()
-    fModules()
-    fDates()
-    fJson()
-    fRegExp()
-    fException()
-    fUserInput()
-    fStrings()
-    fFiles()
-    fLogging()
-    fThreading()
-    fAdvancedCollections()
-    fTests()
-    fPip()
-    fDecorators()
-    fInternetProtocols()
-
+    setup()
+    output_print()
+    variables_scope()
+    data_types()
+    operators()
+    collections()
+    conditional()
+    functions()
+    classes()
+    inheritance()
+    iterators()
+    modules()
+    dates()
+    json_conversions()
+    regular_expressions()
+    exceptions()
+    user_input()
+    strings()
+    file_handling()
+    logging_package()
+    threading()
+    advanced_collections()
+    tests()
+    package_manager()
+    decorators()
+    internet_protocols()
 
 #
 # If this run as startup file, the if statement is true and the main() is called.
