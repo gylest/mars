@@ -21,6 +21,21 @@ BulkLoading demonstrates the performance difference between inserting data into 
 - .NET 10 SDK
 - SQL Server instance accessible from your machine
 
+## NugGet Packages
+
+The NuGet packages used by this project are specified in the file `nuget.config`.
+
+This file has environment variables to support my private NuGet source in GitHub:
+
+| Item                | Description                               |
+|---------------------|-------------------------------------------|
+| GH_USERNAME         | GitHub username                           |
+| GH_TOKEN            | GitHub personal access token              |
+
+The GitHub token has an expiry and needs to be either renewed or replaced with a new token. The token must have the `read:packages` scope to access private NuGet packages.
+
+In actual fact , none of the private packages in GitHub are actually used in this project , but the configuration is left in place for demonstration purposes.
+
 ## Configuration Data
 
 Configuration data is stored in `appsettings.json`.  
