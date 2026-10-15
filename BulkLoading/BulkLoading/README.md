@@ -36,6 +36,17 @@ The GitHub token has an expiry and needs to be either renewed or replaced with a
 
 In actual fact , none of the private packages in GitHub are actually used in this project , but the configuration is left in place for demonstration purposes.
 
+## Managing Environment Variables using PowerShell
+
+To set environment variables:-
+
+[System.Environment]::SetEnvironmentVariable('GH_USERNAME', 'xxx', 'User')
+[System.Environment]::SetEnvironmentVariable('GH_TOKEN', 'yyy', 'User')
+
+To read these variables:-
+
+Get-ChildItem Env:
+
 ## Configuration Data
 
 Configuration data is stored in `appsettings.json`.  
