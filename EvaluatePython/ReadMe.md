@@ -74,7 +74,15 @@ Note: Prefix each pip command with `python -m` to ensure the current python envi
 |Verify packages|`python -m pip check`|
 |Show package dependencies|`python -m pipdeptree`|
 
-### Update All Outdated Packages
+### How to Install all Packages after Upgrade to new Version of Python (or a clean install on new PC)
+
+1. Open requirements.txt in VS Code.
+2. Press Ctrl+H (Windows/Linux) or Cmd+Option+F (macOS) to open Find and Replace.
+3. Enable regular expressions and replace: Find: ==.* ; Replace with: (leave blank)
+4. Save the file and run command `python -m pip install --upgrade -r requirements.txt`
+5. Finally save latest verison back into file `python -m pip freeze > requirements.txt`
+
+### How to Bulk Update Outdated Packages (after returning to project after serveral months)
 
 In `PowerShell` terminal window run the following command to update all outdated packages:
 
@@ -94,10 +102,15 @@ For example to supress messages for "missing-function-docstring" add to section 
 
 ## Running Scripts
 
-1. Open PowerShell terminal window at root directory  
-2. Run main : `python src/main.py`  
-3. Run scrape_beautiful: `python src/scrape_beautifulsoup.py`  
-4. Run todoservice: `python src/todoservice.py`  
+Open PowerShell terminal window at root directory.  
+
+|Script|How to Run|
+|--|--|
+|algorithm.py|`python -m pytest tests/algorithm_test.py`|
+|main.py|`python src/main.py`|
+|read_imdb_top250.py|`python src/read_imdb_top250.py`|
+|scrape_selenium.py|`python -m pytest tests/scrape_selenium_test.py`|
+|todoservice|`python src/todoservice.py`|
 
 ## Debugging Scripts
 

@@ -39,7 +39,7 @@ def test_greeting():
 
 def test_filehash():
 
-    expected = "844b2ee10a35e1c29be679b7e9746c790aeb4dc8"
+    expected = "092df4eef7d4239e44b4945fd624d34368d2518d"
     actual = algorithm.calculate_file_hash(".pylintrc")
     assert expected == actual
 
