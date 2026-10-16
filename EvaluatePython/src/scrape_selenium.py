@@ -7,7 +7,7 @@
 #
 # Imports
 #
-from selenium import webdriver
+from selenium.webdriver.chrome.webdriver import WebDriver as ChromeDriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
@@ -16,7 +16,7 @@ from selenium.webdriver.common.by import By
 #
 def create_driver():
     # Get Google Chrome driver, must be on path
-    driver = webdriver.Chrome()
+    driver = ChromeDriver()
     return driver
 
 def close_driver(driver):
